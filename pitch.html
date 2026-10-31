@@ -593,6 +593,84 @@
       color: var(--text-main);
     }
 
+  
+    /* TECH STACK SECTION STYLES */
+    .tech-stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+      gap: 18px;
+      margin-bottom: 36px;
+    }
+
+    .tech-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .tech-card:hover {
+      border-color: var(--accent-indigo);
+    }
+
+    .tech-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 6px;
+      width: fit-content;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    .tb-server { background: rgba(56, 189, 248, 0.12); color: var(--accent-blue); border: 1px solid rgba(56, 189, 248, 0.3); }
+    .tb-ai { background: rgba(192, 132, 252, 0.12); color: var(--accent-purple); border: 1px solid rgba(192, 132, 252, 0.3); }
+    .tb-sec { background: rgba(16, 185, 129, 0.12); color: var(--accent-emerald); border: 1px solid rgba(16, 185, 129, 0.3); }
+    .tb-parse { background: rgba(245, 158, 11, 0.12); color: var(--accent-amber); border: 1px solid rgba(245, 158, 11, 0.3); }
+
+    .tech-card h4 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tech-card p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .tech-specs-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      border-top: 1px solid #1e293b;
+      padding-top: 12px;
+      font-size: 0.8rem;
+      color: var(--text-faint);
+    }
+
+    .tech-specs-list li {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .tech-specs-list li span:last-child {
+      color: var(--text-main);
+      font-family: ui-monospace, SFMono-Regular, monospace;
+    }
+
   </style>
 </head>
 <body>
@@ -979,6 +1057,102 @@
           <span>Рост LTV: <strong>+35%</strong></span>
           <span>Премиум-сопровождение</span>
         </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- SECTION: TECHNICAL STACK & ARCHITECTURE -->
+  <div class="section-wrap">
+    <span class="section-tag">Инженерный стек • На чем это работает</span>
+    <h2 class="section-title">Техническая реализация платформы</h2>
+    <p class="section-desc">
+      Никаких громоздких и нестабильных конструкций. Архитектура построена по принципу максимальной автономности, высокой скорости и нулевого риска галлюцинаций в медицинских цифрах.
+    </p>
+
+    <div class="tech-stack-grid">
+      <!-- Tech 1: Server & Backend -->
+      <div class="tech-card">
+        <div>
+          <span class="tech-badge tb-server">Сервер & Бэкенд</span>
+          <h4>🖥️ VPS Beget & Python 3</h4>
+          <p>Автономный сервер на Linux (Beget, РФ), работающий 24/7. Фоновые службы под управлением systemd, таймеры проверки лекарств каждые 30 минут.</p>
+        </div>
+        <ul class="tech-specs-list">
+          <li><span>Службы:</span> <span>systemd daemons</span></li>
+          <li><span>Язык бэкенда:</span> <span>Python 3.11</span></li>
+          <li><span>Аптайм:</span> <span>99.9% круглосуточно</span></li>
+        </ul>
+      </div>
+
+      <!-- Tech 2: AI & LLM Engine -->
+      <div class="tech-card">
+        <div>
+          <span class="tech-badge tb-ai">ИИ & Модели</span>
+          <h4>🧠 Gemini 2.5 Flash & Deepgram</h4>
+          <p>Клинический синтез через Google Gemini 2.5 Flash (шлюз Polza). Скорость ответа 1.9 с, стоимость вопроса ~0,10 ₽. Голосовой движок Deepgram Nova-3 расшифровывает за 1.5 с.</p>
+        </div>
+        <ul class="tech-specs-list">
+          <li><span>LLM Модель:</span> <span>Gemini 2.5 Flash</span></li>
+          <li><span>Speech-to-Text:</span> <span>Deepgram Nova-3</span></li>
+          <li><span>Стоимость запроса:</span> <span>~0.10 ₽ (копейки)</span></li>
+        </ul>
+      </div>
+
+      <!-- Tech 3: Deterministic Parsers -->
+      <div class="tech-card">
+        <div>
+          <span class="tech-badge tb-parse">Точность данных</span>
+          <h4>⚙️ Парсеры ЕМИАС без LLM</h4>
+          <p>Числа из анализов, бланков ЕМИАС и протоколов МРТ/УЗИ вытаскиваются регулярными выражениями и детерминированным кодом. Нейросеть не касается сырых цифр — галлюцинации исключены.</p>
+        </div>
+        <ul class="tech-specs-list">
+          <li><span>Парсинг PDF:</span> <span>pdfplumber / regex</span></li>
+          <li><span>Точность цифр:</span> <span>100% математическая</span></li>
+          <li><span>Валидатор:</span> <span>validate.py (18 схем)</span></li>
+        </ul>
+      </div>
+
+      <!-- Tech 4: Storage & Security -->
+      <div class="tech-card">
+        <div>
+          <span class="tech-badge tb-sec">Хранение & Безопасность</span>
+          <h4>🔐 Git-База & StatiCrypt AES-256</h4>
+          <p>Данные хранятся в 18 нормализованных CSV-таблицах в приватном Git-репозитории. При публикации дашборд шифруется военным алгоритмом AES-256 — сервер видит только шифротекст.</p>
+        </div>
+        <ul class="tech-specs-list">
+          <li><span>База данных:</span> <span>18 реляционных CSV</span></li>
+          <li><span>Шифрование:</span> <span>AES-256 StatiCrypt</span></li>
+          <li><span>Внешние утечки:</span> <span>0 (Zero External Calls)</span></li>
+        </ul>
+      </div>
+
+      <!-- Tech 5: Omnichannel Gateway -->
+      <div class="tech-card">
+        <div>
+          <span class="tech-badge tb-server">Интерфейсы доставки</span>
+          <h4>📱 Telegram + VK/MAX + PWA</h4>
+          <p>Шлюз сообщений поддерживает одновременную работу через Telegram Bot API, ботов в VK / MAX (без VPN в РФ) и автономный однофайловый Web-дашборд с адаптивной версткой под 390 px.</p>
+        </div>
+        <ul class="tech-specs-list">
+          <li><span>Мессенджеры:</span> <span>Telegram, VK, MAX</span></li>
+          <li><span>Веб-верстка:</span> <span>HTML5 / CSS / SVG</span></li>
+          <li><span>Мобильный вид:</span> <span>390px (iPhone/Android)</span></li>
+        </ul>
+      </div>
+
+      <!-- Tech 6: External Integrations -->
+      <div class="tech-card">
+        <div>
+          <span class="tech-badge tb-parse">Интеграции</span>
+          <h4>📅 Google Calendar & МИС</h4>
+          <p>Двусторонняя синхронизация с календарем: приемы врачей, напоминания о покупке заканчивающихся таблеток. Архитектурная готовность к интеграции с МИС клиник (1С, Инфоклиника).</p>
+        </div>
+        <ul class="tech-specs-list">
+          <li><span>Календарь:</span> <span>Google Calendar API</span></li>
+          <li><span>Алерты:</span> <span>Push в мессенджер</span></li>
+          <li><span>Готовность к B2B:</span> <span>REST API / Webhooks</span></li>
+        </ul>
       </div>
     </div>
   </div>

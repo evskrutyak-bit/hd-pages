@@ -449,6 +449,37 @@
     </div>
   </section>
 
+  
+    <div class="content-card" style="border-left: 4px solid var(--accent-emerald);">
+      <h3>💊 Действующая фича: «Умная аптечка & Фармацевтический Консьерж»</h3>
+      <p>
+        Она уже работает в проде и полностью закрывает ежедневный хаос с таблетками и добавками. Человеку не нужно вести сложные таблицы — всё завязано на фото и короткие команды в мессенджере:
+      </p>
+
+      <div class="grid-3" style="margin-top: 18px;">
+        <div style="background: var(--code-bg); padding: 16px; border-radius: 10px; border: 1px solid #1e293b;">
+          <div style="color: var(--accent-blue); font-weight: 700; margin-bottom: 6px;">1. Ввод в 1 клик (Фото пачки)</div>
+          <p style="font-size: 0.82rem; color: var(--text-muted);">
+            Купил препарат в аптеке → сфотографировал коробку → отправил боту и надиктовал: <em>«По 1 таблетке утром и вечером»</em>. Модуль <code>vision.py</code> распознает название, дозировку и размер пачки (напр. 28 таб).
+          </p>
+        </div>
+
+        <div style="background: var(--code-bg); padding: 16px; border-radius: 10px; border: 1px solid #1e293b;">
+          <div style="color: var(--accent-amber); font-weight: 700; margin-bottom: 6px;">2. Алерт за 2-3 дня до конца</div>
+          <p style="font-size: 0.82rem; color: var(--text-muted);">
+            Скрипт <code>meds.py</code> математически считает суточный расход. За 2-3 дня до того, как пачка кончится, бот предупреждает: <em>«Дулоксетин закончится в четверг (осталось 5 капсул). Пора заказать новую пачку»</em>.
+          </p>
+        </div>
+
+        <div style="background: var(--code-bg); padding: 16px; border-radius: 10px; border: 1px solid #1e293b;">
+          <div style="color: var(--accent-emerald); font-weight: 700; margin-bottom: 6px;">3. Расписание: До / Во время / После еды</div>
+          <p style="font-size: 0.82rem; color: var(--text-muted);">
+            Утром бот присылает структурированный график дня: что пить натощак, что с едой (Омега, D3), что после обеда и что на ночь. Плюс системные напоминания по слотам дня (утро 09:30, вечер 20:00).
+          </p>
+        </div>
+      </div>
+    </div>
+
   <!-- SECTION 3: DUAL-FOCUS AI DOCTOR -->
   <section class="section-block" id="doctor">
     <div class="section-header">

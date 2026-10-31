@@ -715,6 +715,40 @@
     </div>
   </section>
 
+  
+    <div class="content-card" style="border-left: 4px solid var(--accent-purple);">
+      <h3>🇷🇺 Суверенный ИИ-контур: Переход на отечественные нейросети (GigaChat vs YandexGPT)</h3>
+      <p>
+        <strong>Стратегическое решение:</strong> Для коммерческого запуска, работы с частными клиниками и соблюдения законодательства РФ (152-ФЗ) зарубежные API (Gemini, Claude, OpenAI) в продакшене использоваться не будут. Архитектура построена по принципу <strong>LLM-Agnostic</strong> (модульный шлюз, где модель можно переключить за 1 минуту в конфиге).
+      </p>
+
+      <div class="grid-3" style="margin-top: 18px;">
+        <!-- Candidate 1: Sber GigaChat -->
+        <div style="background: var(--code-bg); padding: 18px; border-radius: 10px; border: 1px solid #1e293b;">
+          <div style="color: var(--accent-emerald); font-weight: 700; font-size: 0.95rem; margin-bottom: 6px;">1. Сбер GigaChat (Фаворит для медицины)</div>
+          <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.45;">
+            <strong>Главный плюс:</strong> Первая модель в РФ, официально сдавшая экзамен Минздрава по специальности «Лечебное дело» (оценка 4). Знает стандарты клинических рекомендаций РФ, МКБ-10, термины лекарств. Сервера в Cloud.ru с аттестацией 152-ФЗ.
+          </p>
+        </div>
+
+        <!-- Candidate 2: YandexGPT Pro -->
+        <div style="background: var(--code-bg); padding: 18px; border-radius: 10px; border: 1px solid #1e293b;">
+          <div style="color: var(--accent-amber); font-weight: 700; font-size: 0.95rem; margin-bottom: 6px;">2. Яндекс YandexGPT Pro</div>
+          <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.45;">
+            <strong>Главный плюс:</strong> Быстрый отклик, отличная суммаризация длинных текстов, размещение в Yandex Cloud (уровень защищенности УЗ-1). Идеально для генерации выжимок к приему врача и парсинга свободной речи.
+          </p>
+        </div>
+
+        <!-- Candidate 3: Local Self-Hosted -->
+        <div style="background: var(--code-bg); padding: 18px; border-radius: 10px; border: 1px solid #1e293b;">
+          <div style="color: var(--accent-blue); font-weight: 700; font-size: 0.95rem; margin-bottom: 6px;">3. Локальная LLM (On-Premise)</div>
+          <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.45;">
+            <strong>Главный плюс:</strong> Для закрытых VIP-клиник и госпиталей: развертывание открытой модели (напр. Qwen 2.5 / Vikhr), дообученной на медицинских датасетах, прямо на собственном защищенном сервере без выхода в интернет.
+          </p>
+        </div>
+      </div>
+    </div>
+
   <!-- SECTION 8: B2B COMMERCIAL EXPANSION -->
   <section class="section-block" id="b2b">
     <div class="section-header">

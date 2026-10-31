@@ -314,6 +314,55 @@
     .pill-purple { background: rgba(192, 132, 252, 0.15); color: var(--accent-purple); }
     .pill-blue { background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); }
 
+    
+    /* Fixed Infra Spec List */
+    .infra-spec-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .infra-spec-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .infra-spec-bullet {
+      color: var(--accent-indigo);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .infra-spec-text {
+      color: var(--text-muted);
+      flex: 1;
+    }
+    .infra-spec-text strong {
+      color: var(--text-main);
+    }
+    .infra-spec-text code {
+      font-family: var(--font-mono);
+      background: #1e293b;
+      color: var(--accent-blue);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.85em;
+    }
+
+    /* Fix any other checklist li from flex-breaking inline text */
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .checklist li > div, .checklist li > span:not(.check-icon) {
+      flex: 1;
+    }
+
     /* Checklist */
     .checklist {
       list-style: none;
@@ -704,13 +753,28 @@
         <p>
           Как документ превращается в график и персональный ответ:
         </p>
-        <ul class="checklist">
-          <li><strong>Сервер:</strong> VPS Beget (Ubuntu/Linux), постоянные службы <code>systemd</code>.</li>
-          <li><strong>Парсеры без LLM:</strong> <code>extract_emias.py</code> извлекает показатели регулярными выражениями без участия нейросети (исключены ошибки в цифрах).</li>
-          <li><strong>Валидатор:</strong> <code>validate.py</code> проверяет типы данных и референсы перед каждым коммитом.</li>
-          <li><strong>Шифрование StatiCrypt:</strong> Веб-страница шифруется алгоритмом AES-256. Сервер видит только шифротекст. Расшифровка только в браузере по паролю.</li>
-          <li><strong>Экономика запроса:</strong> Gemini 2.5 Flash через Polza обходится всего в <strong>~0.10 ₽ за вопрос</strong> при скорости 1.9 секунды.</li>
-        </ul>
+        <div class="infra-spec-list">
+          <div class="infra-spec-item">
+            <span class="infra-spec-bullet">▸</span>
+            <div class="infra-spec-text"><strong>Сервер:</strong> VPS Beget (Ubuntu/Linux), постоянные службы <code>systemd</code>.</div>
+          </div>
+          <div class="infra-spec-item">
+            <span class="infra-spec-bullet">▸</span>
+            <div class="infra-spec-text"><strong>Парсеры без LLM:</strong> <code>extract_emias.py</code> извлекает показатели регулярными выражениями без участия нейросети (исключены ошибки в цифрах).</div>
+          </div>
+          <div class="infra-spec-item">
+            <span class="infra-spec-bullet">▸</span>
+            <div class="infra-spec-text"><strong>Валидатор:</strong> <code>validate.py</code> проверяет типы данных и референсы перед каждым коммитом.</div>
+          </div>
+          <div class="infra-spec-item">
+            <span class="infra-spec-bullet">▸</span>
+            <div class="infra-spec-text"><strong>Шифрование StatiCrypt:</strong> Веб-страница шифруется алгоритмом AES-256. Сервер видит только шифротекст. Расшифровка только в браузере по паролю.</div>
+          </div>
+          <div class="infra-spec-item">
+            <span class="infra-spec-bullet">▸</span>
+            <div class="infra-spec-text"><strong>Экономика запроса:</strong> Gemini 2.5 Flash через Polza обходится всего в <strong>~0.10 ₽ за вопрос</strong> при скорости 1.9 секунды.</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
